@@ -1,0 +1,25 @@
+<div class="tw-flex tw-flex-col tw-w-72 tw-bg-nav-bar-bg tw-h-full tw-fixed">
+	<div class="tw-flex tw-flex-col tw-mt-16 tw-px-4 tw-text-white tw-gap-3">
+		<div class="tw-flex tw-items-center tw-gap-3 tw-p-3 tw-cursor-pointer tw-rounded-lg"
+			[ngClass]="pageName === 'Home' ? 'tw-bg-nav-link-active-bg' : ''" [routerLink]="'/'">
+			<mat-icon>home</mat-icon>
+			<div class="tw-flex tw-items-center tw-text-16-px tw-font-semibold">
+				Home
+			</div>
+		</div>
+		<div class="tw-flex tw-items-center tw-gap-3 tw-p-3 tw-cursor-pointer tw-rounded-lg"
+			[ngClass]="pageName === 'Search' ? 'tw-bg-nav-link-active-bg' : ''">
+			<mat-icon>search</mat-icon>
+			<div class="tw-flex tw-items-center tw-text-16-px tw-font-semibold">
+				Search
+			</div>
+		</div>
+		<div class="tw-flex tw-flex-col tw-justify-center tw-px-4 tw-mt-3 tw-gap-3">
+			<div class="tw-text-16-px" *ngFor="let subject of trendingSubjects">
+				<div class="tw-flex tw-cursor-pointer" routerLink="/trending-subject/{{ subject.link }}">
+					{{ subject.name }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

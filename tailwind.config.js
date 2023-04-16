@@ -4,7 +4,10 @@ const { join } = require('path');
 const customColors = {
   'dark-border': '#161528',
   'light-border': '#d6d6d6',
-  'table-header-bg': '#f5f5f5'
+  'table-header-bg': '#f5f5f5',
+  'nav-link-active-bg': '#d78dff',
+  'nav-bar-bg': '#621ae1',
+  'table-header-bg': '#b3efee'
 }
 
 module.exports = {
@@ -14,19 +17,19 @@ module.exports = {
   },
   content: [join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'), ...createGlobPatternsForDependencies(__dirname)],
   theme: {
-    textColor: {
-      ...customColors
-    },
     fontSize: {
       '14-px': '14px',
       '16-px': '16px',
       '24-px': '24px',
     },
     extend: {
+      textColor: {
+        ...customColors
+      },
       colors: {
         ...customColors
       },
-      borderRadius: { 
+      borderRadius: {
         '4-px': '4px',
       },
       margin: {

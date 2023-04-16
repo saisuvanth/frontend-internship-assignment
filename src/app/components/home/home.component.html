@@ -1,4 +1,4 @@
-<div class="header">
+<!-- <div class="header">
   <div class="tw-text-24-px tw-font-600">Open Books Library</div>
   <div class="search-button">
     <mat-icon class="tw-mt-16-px" aria-label="Search Icon">search</mat-icon>
@@ -20,4 +20,18 @@
       </li>
     </ul>
   </section>
+</div> -->
+<div class="tw-flex tw-h-screen">
+  <front-end-internship-assignment-sidebar [pageName]="pageName"></front-end-internship-assignment-sidebar>
+  <div class="tw-flex tw-flex-col tw-w-full tw-ml-80">
+    <div class="tw-flex tw-h-16 tw-p-3 tw-justify-between tw-items-center ">
+      <p class="tw-flex tw-text-16-px">
+        Home
+      </p>
+      <div>
+        <input [formControl]="bookSearch" name="searchKey" type="search" placeholder="Search..." class="">
+      </div>
+    </div>
+    <front-end-internship-assignment-books-list [searchKey]="searchKey"></front-end-internship-assignment-books-list>
+  </div>
 </div>

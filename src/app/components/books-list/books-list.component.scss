@@ -1,0 +1,25 @@
+.spinner,
+.spinner::after {
+  border-radius: 50%;
+  width: 6em;
+  height: 6em;
+}
+
+.spinner {
+  transform: translateZ(0);
+  font-size: 8px;
+  border-top: 0.8em solid #c9c6c6;
+  border-right: 0.8em solid #c9c6c6;
+  border-bottom: 0.8em solid #621ae1;
+  border-left: 0.8em solid #621ae1;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

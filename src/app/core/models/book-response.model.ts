@@ -1,8 +1,3 @@
-export interface Author {
-  key: string;
-  name: string;
-}
-
 export interface Availability {
   status: string;
   available_to_browse: boolean;
@@ -37,7 +32,8 @@ export interface Book {
   printdisabled: boolean;
   lending_edition: string;
   lending_identifier: string;
-  authors: Author[];
+  author_name: string[];
+  author_key: string[];
   first_publish_year: number;
   ia: string;
   public_scan: boolean;
@@ -51,4 +47,19 @@ export interface BookResponse {
   subject_type: string;
   work_count: number;
   works: Book[];
+}
+
+export interface SearchResponse {
+  numFound: number;
+  numFoundExact: boolean;
+  offset: number;
+  q: string;
+  start: number;
+  docs: Book[];
+}
+
+
+export interface TrendingSubjects {
+  name: string;
+  link: string;
 }

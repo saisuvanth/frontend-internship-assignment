@@ -1,0 +1,14 @@
+<ng-container>
+	<div class="tw-flex tw-mt-48 tw-mb-10 tw-justify-center tw-items-center tw-h-auto" *ngIf="loading">
+		<div class="spinner"></div>
+	</div>
+	<div class="tw-flex tw-justify-center tw-mt-5" *ngIf="!loading && totalBooks===0">
+		No Books Found
+	</div>
+	<front-end-internship-assignment-table-view *ngIf="!loading && totalBooks>0" [booksList]="booksData">
+	</front-end-internship-assignment-table-view>
+	<div class="tw-flex tw-justify-end tw-mr-2">
+		<mat-paginator fixed #paginator [length]="totalBooks" [pageSize]="limit" (page)="getBooks($event.pageIndex)">
+		</mat-paginator>
+	</div>
+</ng-container>

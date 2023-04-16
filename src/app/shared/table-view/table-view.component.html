@@ -1,9 +1,7 @@
 <div class="tw-m-24-px">
-  <div class="tw-mb-24-px tw-text-24-px"> Top {{ booksList.length }} book{{ booksList.length > 1 ? "s" : "" }} on {{ subjectName }}</div>
-
   <ng-container>
     <table class="table-view">
-      <thead>
+      <thead class="tw-bg-table-header-bg">
         <tr class="table-row">
           <th class="header">Title and Sub Title</th>
           <th class="header">Author</th>
@@ -16,9 +14,20 @@
             <a class="tw-no-underline" href="https://openlibrary.org{{ book.key }}" target="_blank">{{ book.title }}</a>
           </td>
           <td>
-            {{ book.authors.length > 0 ? book.authors[0].name : "Unknown" }}
+            <a *ngIf="book.author_key?.length" class="tw-no-underline" target="_blank"
+              href="https://openlibrary.org/authors/{{book.author_key[0]}}">
+              {{ book.author_name[0] }}
+            </a>
+            <p *ngIf="!book.author_key?.length">Unknown</p>
           </td>
-          <td>{{ book.first_publish_year }}</td>
+          <td>
+            <div *ngIf="book.first_publish_year">
+              {{ book.first_publish_year }}
+            </div>
+            <div *ngIf="!book.first_publish_year">
+              Unknown
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

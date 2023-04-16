@@ -6,6 +6,11 @@ import { TrendingSubjectsComponent } from '../app/components/trending-subjects/t
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'books',
+    pathMatch: 'full',
+  },
+  {
+    path: 'books',
     component: HomeComponent,
     title: 'Open Books Library',
   },
@@ -20,4 +25,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
